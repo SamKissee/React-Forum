@@ -1,10 +1,11 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 function Header(){
-  return(
+  return (
     <div>
-      Header Works
+      <h1>Reddit</h1>
+      <Link to="/">Home</Link> | <Link to="/addpost">Create Post</Link>
     </div>
   );
 }

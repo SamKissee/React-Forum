@@ -1,34 +1,30 @@
 import React from 'react';
+import Post from './Post';
+import PropTypes from 'prop-types';
 
 
-function PostList(){
+function PostList(props){
   return(
     <div>
       <hr/>
       {Object.keys(props.postList).map(function(postId) {
         var post = props.postList[postId];
         return <Post
-          user={ticket.user}
-          title={ticket.title}
-          content={ticket.content}
-          votes={ticket.votes}
+          user={post.user}
+          title={post.title}
+          content={post.content}
+          votes={post.votes}
           key={postId}
-          postId={postId}
-          />;
+          postId={postId}/>;
       })}
     </div>
   );
 }
 
 
-user: PropTypes.string.isRequired,
-title: PropTypes.string.isRequired,
-content: PropTypes.string,
-votes: PropTypes.number.isRequired,
-postId: PropTypes.string.isRequired
 
 PostList.propTypes = {
   postList: PropTypes.object,
-}
+};
 
 export default PostList;
